@@ -7,7 +7,7 @@ loopcount = 100
 for i in range(loopcount):
     print(message)
  #bedingung
-message = "Milad"
+message = "Musti"
 if message == "hello world":
     print("message is hello world")
 else:
