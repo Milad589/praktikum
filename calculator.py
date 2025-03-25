@@ -23,16 +23,16 @@ while True:
         
         if op == "*":
             result = multi(a, b)
-            print(result)
+            print("Das Ergebnis ist:", result) 
         elif op == "+":
             result = add(a, b)
-            print(result)
+            print("Das Ergebnis ist:", result) 
         elif op == "-":
             result = sub(a, b)    
-            print(result)
+            print("Das Ergebnis ist:", result) 
         elif op == "/":
             result = divi(a, b)
-            print(result)
+            print("Das Ergebnis ist:", result)      
         else:
             print("ungültiger Operator gültige Operator sind: +, -, *, /")    
     except ZeroDivisionError:
