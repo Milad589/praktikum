@@ -1,14 +1,12 @@
-print("hello world")
-#variable
-message = "hello world"
-print(message)
-#loop
-loopcount = 100
-for i in range(loopcount):
-    print(message)
- #bedingung
-message = "Musti"
-if message == "hello world":
-    print("message is hello world")
-else:
-    print("message is not hello world")
+def simpleArraySum(ar):
+    summ = 0  
+    for n in ar:
+        summ = n + summ 
+    print(summ)
+    return summ
+
+
+
+simpleArraySum([1, 2, 3, 4, 5])         #15
+simpleArraySum([1, 2, 3, 4, 5, 10])     #25
+simpleArraySum([1, 2, 3, 4, 5, 10, 12])     #37
