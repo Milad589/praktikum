@@ -12,29 +12,31 @@ def divi(x, y):
         raise ZeroDivisionError
     return x / y
 
+def compute(op, x, y):
+    result = 0
+    if op == "*":
+        resukt = multi(x, y)
+    elif op == "+":
+        resukt = add(x, y)
+    elif op == "-":
+        result = sub(x, y)
+    elif op == "/":
+        result = divi(x, y)
+    return result
 
 
 
 while True:
     try:
-        a = float(input("Erste Zahl: "))
         op = input("Operator (+, -, *, /): ")
+        if op == "q":
+            exit(0)
+
+        a = float(input("Erste Zahl: "))
         b = float(input("Zweite Zahl: "))
         
-        if op == "*":
-            result = multi(a, b)
-            print("Das Ergebnis ist:", result) 
-        elif op == "+":
-            result = add(a, b)
-            print("Das Ergebnis ist:", result) 
-        elif op == "-":
-            result = sub(a, b)    
-            print("Das Ergebnis ist:", result) 
-        elif op == "/":
-            result = divi(a, b)
-            print("Das Ergebnis ist:", result)      
-        else:
-            print("ungültiger Operator gültige Operator sind: +, -, *, /")    
+        
+        print("Das Ergebnis lautet:", compute(op, a, b))
     except ZeroDivisionError:
         print("Division durch null nicht möglcih")
     except ValueError:
