@@ -22,7 +22,10 @@ def compute(op, x, y):
         result = sub(x, y)
     elif op == "/":
         result = divi(x, y)
-    return result
+        return result
+    else:
+        print("Ungültiger Operator gültige Operatoren sind +,-,/,*")
+    
 
 
 
