@@ -1,57 +1,44 @@
-def add(x, y):
-    return x + y
+import logging
 
-def sub(x, y):
-    return x - y
-
-def multi(x, y):
-    return x * y 
-
-def divi(x, y):
-    if y == "0":
-        raise ZeroDivisionError
-    return compute
+logging.basicConfig(level=logging.INFO, filename="logs.py")
 
 def message(msg):
+    logging.info(msg)
     print("\n=== " + str(msg) + " ===\n")
 
-def compute(op, x, y):
-    #print(type(op), type(x), type(y))
-    result = 0
-    if op == "*":
-        result = multi(x, y)
-    elif op == "+":
-        result = add(x, y)
+def compute(op, a, b):
+    if op == "+":
+        return a + b
     elif op == "-":
-        result = sub(x, y)
+        return a - b
+    elif op == "*":
+        return a * b
     elif op == "/":
-        result = divi(x, y)
-    return result
- 
+        return a / b
+
 def main():
     while True:
         try:
-            erlaubte_operatoren = ["+","-","*","/"]
-            op = input("Operator (+, -, *, /) or q for leave: ")
+            erlaubte_operatoren = ["+", "-", "*", "/"]
+            op = input("Operator (+, -, *, /) oder q zum Verlassen: ")
             if op == "q":
-                message("Programm Beendet")
+                message("Programm beendet")
                 exit(0)
- 
+
             if op in erlaubte_operatoren:
                 a = float(input("Erste Zahl: "))
                 b = float(input("Zweite Zahl: "))
-                message("Das Ergebnis lautet: " + str(result))
+                message("Das Ergebnis lautet: " + str(compute(op, a, b)))
             else:
-                message("Ungültiger Operator gültige Operatoren sind +,-,/,*")
-       
-        except ZeroDivisionError:
-            message("Division durch null nicht möglcih")
-        except ValueError:
-            message("Bitte eine gültige Zahl eingeben.")
- 
-if __name__ == '__main__':
-    main()
+                message("Ungültiger Operator! Gültige Operatoren sind: +, -, *, /")
 
+        except ZeroDivisionError:
+            message("Fehler: Division durch Null ist nicht möglich!")
+        except ValueError:
+            message("Fehler: Bitte eine gültige Zahl eingeben!")
+
+if __name__ == "__main__":
+    main()
 
 
 
