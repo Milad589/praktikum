@@ -1,26 +1,33 @@
 import logging
 
-logging.basicConfig(level=logging.INFO, filename="logs.py")
+logging.basicConfig(level=logging.INFO, filename="logs.txt", filemode='w', format='%(asctime)s - %(message)s')
 
 def message(msg):
     logging.info(msg)
-    print("\n=== " + str(msg) + " ===\n")
 
 def compute(op, a, b):
+    message("Berechne: " + str(a) + " " + op + " " + str(b))
+    
     if op == "+":
-        return a + b
+        result = a + b
     elif op == "-":
-        return a - b
+        result = a - b
     elif op == "*":
-        return a * b
+        result = a * b
     elif op == "/":
-        return a / b
+        if b == 0:
+            raise ZeroDivisionError("Division durch Null!")
+        result = a / b
+    
+    message("Ergebnis: " + str(result))
+    return result
 
 def main():
     while True:
         try:
             erlaubte_operatoren = ["+", "-", "*", "/"]
             op = input("Operator (+, -, *, /) oder q zum Verlassen: ")
+            
             if op == "q":
                 message("Programm beendet")
                 exit(0)
@@ -28,20 +35,22 @@ def main():
             if op in erlaubte_operatoren:
                 a = float(input("Erste Zahl: "))
                 b = float(input("Zweite Zahl: "))
-                message("Das Ergebnis lautet: " + str(compute(op, a, b)))
+                
+                message("Operator: " + op + ", Erste Zahl: " + str(a) + ", Zweite Zahl: " + str(b))
+                
+                result = compute(op, a, b)
+                
+                print("\n=== Das Ergebnis der Berechnung lautet: " + str(result) + " ===\n")
             else:
                 message("Ungültiger Operator! Gültige Operatoren sind: +, -, *, /")
 
-        except ZeroDivisionError:
-            message("Fehler: Division durch Null ist nicht möglich!")
+        except ZeroDivisionError as e:
+            message("Fehler: " + str(e))
+            print("\n=== Fehler: Division durch Null ist nicht möglich! ===\n")
         except ValueError:
             message("Fehler: Bitte eine gültige Zahl eingeben!")
+            print("\n=== Fehler: Bitte eine gültige Zahl eingeben! ===\n")
 
 if __name__ == "__main__":
     main()
 
-
-
-
-
-    
