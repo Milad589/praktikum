@@ -1,6 +1,6 @@
 import logging
 import mylog
-from rechnen import compute  # Importiere compute aus der rechnen-Bibliothek
+from rechnen import compute  
 
 def message(Loglevel, msg):
     """
