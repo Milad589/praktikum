@@ -25,14 +25,14 @@ def compute(op, a, b):
 def main():
     while True:
         try:
-            erlaubte_operatoren = ["+", "-", "*", "/"]
+            valid_operators = ["+", "-", "*", "/"]
             op = input("Operator (+, -, *, /) oder q zum Verlassen: ")
             
             if op == "q":
                 message("Programm beendet")
                 exit(0)
 
-            if op in erlaubte_operatoren:
+            if op in valid_operators:
                 a = float(input("Erste Zahl: "))
                 b = float(input("Zweite Zahl: "))
                 
