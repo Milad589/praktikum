@@ -29,7 +29,8 @@ def main():
             op = input("Operator (+, -, *, /) oder q zum Verlassen: ")
             
             if op == "q":
-                message("Programm beendet")
+                message("Programm Beendet")
+                print("Programm Beendet")
                 exit(0)
 
             if op in valid_operators:
