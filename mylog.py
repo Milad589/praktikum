@@ -9,11 +9,7 @@ def mylog(logfilename):
 
 def message(Loglevel, msg):
     """
-    Loggt eine Nachricht mit dem angegebenen Log-Level (info, error, warning, debug).
-    
-    Args:
-        Loglevel (str): Das Log-Level (info, error, warning, debug).
-        msg (str): Die Nachricht, die geloggt werden soll.
+    Loggt eine Nachricht mit dem angegebenen Log-Level.
     """
     loglevel = Loglevel.lower()
     if loglevel == "info":

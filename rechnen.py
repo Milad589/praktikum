@@ -1,6 +1,7 @@
 import logging
 from mylog import message
 
+
 def compute(op, a, b):
     """
     Führt eine Berechnung basierend auf dem Operator und den Operanden durch.
@@ -32,3 +33,5 @@ def compute(op, a, b):
 
     message("info", "Ergebnis: " + str(result))
     return result
+
+
