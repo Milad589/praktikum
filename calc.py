@@ -26,9 +26,12 @@ def main():
     expression = args.expression
     mylog.message("info", f"Berechnungsausdruck: {expression}")
     
+    
     try:
         result = compute_expression(expression)
-        print(f"\n=== Das Ergebnis lautet: {result} ===\n")
+        ergebnis=f"Ergebnis lautet : {result}"
+        print(ergebnis)
+        mylog.message("info", ergebnis)
     except ZeroDivisionError:
         mylog.message("error", "Division durch Null ist nicht erlaubt.")
         sys.exit("\n=== Fehler: Division durch Null ist nicht erlaubt! ===\n")
